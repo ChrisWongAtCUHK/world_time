@@ -15,6 +15,13 @@ class _ChooseLocationState extends State<ChooseLocation> {
     Future.delayed(const Duration(seconds: 3), () {
       print('yoshi');
     });
+
+    // simulate network request to get bio of the username
+    Future.delayed(const Duration(seconds: 2), () {
+      print('vegan, musician & egg collector');
+    });
+
+    print('statement');
   }
 
   @override
