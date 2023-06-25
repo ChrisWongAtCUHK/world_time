@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
 
 class Loading extends StatefulWidget {
   const Loading({super.key});
@@ -17,8 +18,11 @@ class _LoadingState extends State<Loading> {
 
     // Await the http get response, then decode the json-formatted response.
     var response = await http.get(url);
+    var jsonResponse =
+        convert.jsonDecode(response.body) as Map<String, dynamic>;
 
-    print(response.body);
+    print(jsonResponse);
+    print(jsonResponse['title']);
   }
 
   @override
