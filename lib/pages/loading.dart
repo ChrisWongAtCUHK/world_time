@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
-import 'package:world_time/todo.dart';
+import 'package:world_time/timezone.dart';
 
 class Loading extends StatefulWidget {
   const Loading({super.key});
@@ -13,22 +13,23 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
-  void getData() async {
-    var url =
-        Uri.https('jsonplaceholder.typicode.com', '/todos/1', {'q': '{https}'});
+  void getTime() async {
+    var url = Uri.https('www.worldtimeapi.org', '/api/timezone/Europe/London',
+        {'q': '{https}'});
 
     // Await the http get response, then decode the json-formatted response.
     var response = await http.get(url);
-    var todo = Todo.fromJson(convert.jsonDecode(response.body));
+    var timezone = Timezone.fromJson(convert.jsonDecode(response.body));
 
-    print(todo);
-    print(todo.title);
+    print(timezone);
+    print(timezone.datetime);
+    print(timezone.utc_offset);
   }
 
   @override
   void initState() {
     super.initState();
-    getData();
+    getTime();
   }
 
   @override
