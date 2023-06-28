@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 import 'package:world_time/timezone.dart';
+import 'package:world_time/services/world_time.dart';
 
 class Loading extends StatefulWidget {
   const Loading({super.key});
@@ -13,23 +14,17 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
-  void getTime() async {
-    var url = Uri.https('www.worldtimeapi.org', '/api/timezone/Europe/London',
-        {'q': '{https}'});
-
-    // Await the http get response, then decode the json-formatted response.
-    var response = await http.get(url);
-    var timezone = Timezone.fromJson(convert.jsonDecode(response.body));
-
-    print(timezone);
-    print(timezone.datetime);
-    print(timezone.utc_offset);
+  void setupWorldTime() async {
+    WorldTime worldTime = WorldTime(
+        location: 'Berlin', flag: 'germany.png', url: 'Europe/Berlin');
+    await worldTime.getTime();
+    print(worldTime.time);
   }
 
   @override
   void initState() {
     super.initState();
-    getTime();
+    setupWorldTime();
   }
 
   @override
