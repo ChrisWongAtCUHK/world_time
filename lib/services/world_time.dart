@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
-
 import 'package:http/http.dart';
+import 'package:intl/intl.dart';
 
 class WorldTime {
   String location; // location name for the UI
@@ -19,6 +19,6 @@ class WorldTime {
     Response response = await http.get(uri);
     Map<String, dynamic> data = convert.jsonDecode(response.body);
 
-    time = DateTime.parse(data['datetime']).toString();
+    time = DateFormat.jm().format(DateTime.parse(data['datetime']));
   }
 }
