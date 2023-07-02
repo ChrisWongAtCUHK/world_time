@@ -46,6 +46,13 @@ class _HomeState extends State<Home> {
                   )
                 ],
               ),
+              const SizedBox(height: 20.0),
+              Text(
+                data['time']!,
+                style: const TextStyle(
+                  fontSize: 66.0,
+                ),
+              ),
             ],
           ),
         ),
