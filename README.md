@@ -27,3 +27,4 @@ samples, guidance on mobile development, and a full API reference.
 ## [Flutter Tutorial for Beginners #28 - WorldTime Custom Class](https://www.youtube.com/watch?v=9lCQhwo8WT4&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=28)
 ## [Flutter Tutorial for Beginners #30 - Passing Route Data](https://www.youtube.com/watch?v=KIAwGfnoteE&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=31)
 ## [Flutter Tutorial for Beginners #31 - Formatting & Showing Dates](https://www.youtube.com/watch?v=c7Ap0iLwv6k&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=31)
+## [Flutter Tutorial for Beginners #32 - Loaders / Spinners](https://www.youtube.com/watch?v=nLlVANBmFJM&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=33)
