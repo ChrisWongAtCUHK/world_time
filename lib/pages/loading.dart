@@ -17,6 +17,9 @@ class _LoadingState extends State<Loading> {
         location: 'Berlin', flag: 'germany.png', url: 'Europe/Berlin');
     await worldTime.getTime();
 
+    // make 10s loading
+    await Future.delayed(const Duration(seconds: 10));
+
     // ignore: use_build_context_synchronously
     Navigator.pushReplacementNamed(context, '/home', arguments: {
       'location': worldTime.location,
