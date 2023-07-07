@@ -17,14 +17,15 @@ class _LoadingState extends State<Loading> {
         location: 'Berlin', flag: 'germany.png', url: 'Europe/Berlin');
     await worldTime.getTime();
 
-    // make 10s loading
-    await Future.delayed(const Duration(seconds: 10));
+    // make 1s loading
+    await Future.delayed(const Duration(seconds: 1));
 
     // ignore: use_build_context_synchronously
     Navigator.pushReplacementNamed(context, '/home', arguments: {
       'location': worldTime.location,
       'flag': worldTime.flag,
       'time': worldTime.time,
+      'isDaytime': worldTime.isDaytime,
     });
   }
 
@@ -39,9 +40,9 @@ class _LoadingState extends State<Loading> {
     return const Scaffold(
       backgroundColor: Color.fromARGB(255, 13, 71, 161),
       body: Center(
-        child: SpinKitRotatingCircle(
+        child: SpinKitWave(
           color: Colors.white,
-          size: 50.0,
+          size: 180.0,
         ),
       ),
     );
